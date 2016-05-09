@@ -1,0 +1,58 @@
+Getting Started with Deep Learning using Open Source Libraries_____________________________________________
+
+• The most popular Deep Learning Libraries:
+	• Lasagna : https://github.com/Lasagne/Lasagne
+	• Keras : https://github.com/fchollet/keras
+	• Caffe : https://github.com/BVLC/caffe
+
+
+Getting Started with Keras :
+	• Keras is based on Theano as backend.
+	• Link : http://keras.io/
+	• Install Theano:
+		○ Check the dependencies
+		  sudo apt-get install python-numpy python-scipy python-dev python-pip python-nose g++ libopenblas-dev git
+		○ sudo pip install Theano
+	· Install Keras:
+		○ sudo pip install keras
+		
+
+Getting Started with Caffe :
+	• Check the dependencies:
+		  sudo apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev protobuf-compiler gfortran libjpeg62 libfreeimage-dev libatlas-base-dev git python-dev python-pip libgoogle-glog-dev libbz2-dev libxml2-dev libxslt-dev libffi-dev libssl-dev libgflags-dev liblmdb-dev python-yaml python-numpy
+	· Install Pillow : Optional. For Caffe Display Engine.
+		○ sudo easy_install pillow
+		○ pip install protobuf : Update Protobuf
+	· Now we can download Caffe. Navigate to the directory of your choice for the cloning.
+		○ cd ~
+		○ git clone https://github.com/BVLC/caffe.git
+	· Install more dependencies. Estimated time ~20minutes :)
+		○ cd caffe
+		○ cat python/requirements.txt | xargs -L 1 sudo pip install
+	· Update the MakeFile. Right Now we are going to Run Caffe on CPU.
+		  cp Makefile.config.example Makefile.config
+      vi Makefile.config
+	· Once Makefile.config is opened, edit as suggested below:
+		○ # cuDNN acceleration switch (uncomment to build with cuDNN).
+		  #USE_CUDNN := 1
+		○ # CPU-only switch (uncomment to build without GPU support).
+		  CPU_ONLY := 1
+		○ Leave others as it is.
+	· Now we build caffe:
+		  make pycaffe
+      make all
+      make test
+	• For Testing if Caffe is correctly installed, go to Caffe Root folder and give the following commands:
+		./data/mnist/get_mnist.sh
+		./examples/mnist/create_mnist.sh
+		./examples/mnist/train_lenet.sh
+	• Open the .bashrc file  :  sudo vi /etc/bash.bashrc
+		○ Add Caffe Root Directory at the end of the file
+		# Caffe Root
+		  export CAFFE_ROOT=/ML/caffe
+	• That should be it.
+		
+
+Optional Libraries :
+	a. BLAS : sudo apt-get install libopenblas-dev git unzip
+	b. Boost : sudo apt-get install libboost-all-dev
