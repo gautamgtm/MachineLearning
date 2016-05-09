@@ -1,0 +1,47 @@
+Using GPU Acceleration for Deep Learning using Cuda_________________________________________________________
+
+	1. Installing Cuda :
+		a. Install and update the dependencies
+		    sudo apt-get update && sudo apt-get upgrade
+		    sudo apt-get install build-essential
+		b. Download the Deb file to any location:
+		    wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
+		c. Give the following commands:
+		    sudo dpkg -i  cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
+		    sudo apt-get update
+		    sudo apt-get install cuda
+		
+		d. Open the .bashrc file :   sudo vi /etc/bash.bashrc
+			○ Add to the end of the file
+			    export PATH=$PATH:/usr/local/cuda-7.5/bin
+			    export LD_LIBRARY_PATH=:/usr/local/cuda-7.5/lib64
+		e. Remember to run source ~/.bashrc after saving .bashrc and run ldconfig as root ($ sudo ldconfig)
+
+	2. Enabling Theano to use Cuda:
+		a. Create an empty .theanorc file in the home of your user-space(/usr2/gautamk)
+		b. Add the following lines to it:
+  		[global]
+  		floatX=float32
+  		device=gpu0
+  		optimizer=fast_run
+  		
+  		[cuda]
+  		root=/usr/local/cuda-7.5/
+  		
+  		[lib]
+  		cnmem=1
+		
+		c. Make nvidia.conf in /etc/ld.so.conf.d/. Add the lines:
+  		/usr/local/cuda-7.5/lib64
+  		/usr/local/cuda-7.5/lib
+	  	Save and exit.
+		  Run sudo ldconfig
+		
+	3. Installing CuDNN library for Cuda
+		○ After registering with NVIDA, download cuDNN. Extract the tar and copy the headers and libraries to the CUDA directory. Get it here.
+		○ Download the file and give following commands:
+		    tar -zxf cudnn-7.0-linux-x64-v3.0-prod.tgz
+  		cd cuda
+  		sudo cp lib64/* /usr/local/cuda/lib64/
+  		sudo cp include/cudnn.h /usr/local/cuda/include/
+		
