@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------------
+Model #1
+---------------------------------------------------------------------------------------
+[Model]
+_INPUT_UNITS = 22
+_HIDDEN_UNITS = 64
+_OUTPUT_UNITS = 1
+_LEARNING_RATE = 0.01
+_NEPOCH = 250
+_LOOKBACK_SAMPLES = 20
+
+
+KFold with n_folds = 5
+NeuralNet : 1 layer deep Bidirectional simpleRNN and GRU with the abovementioned features. Activation fn = Relu
+Best Submission : Average of all the models outputs. Score : 25.01504
+
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+Model #2
+---------------------------------------------------------------------------------------
+[Model]
+_INPUT_UNITS = 22
+_HIDDEN_UNITS = 64
+_OUTPUT_UNITS = 1
+_LEARNING_RATE = 0.01
+_NEPOCH = 250
+_LOOKBACK_SAMPLES = 20
+
+
+KFold with n_folds = 5
+NeuralNet : 1 layer deep Bidirectional simpleRNN and GRU with the abovementioned features. Activation fn = Tanh
+Score :
+
+---------------------------------------------------------------------------------------
