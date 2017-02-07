@@ -115,6 +115,11 @@ for i in range(2,105):
     x.append(predicted_output[0][0])
     y.append(predicted_output[0][1])
 ### Plot Predicted Trajectory ###
+location = [[0,0]]
+for i in range(len(x)):
+    location.append([x[i], y[i]])
+print location
+np.savetxt("./results/example.csv", np.asarray(location), delimiter=",")
 plt.plot(x, y, linewidth=2.0, color='red', linestyle='--', marker='v', label='Predicted_2')
 plt.legend()
 plt.savefig("./plots/Projectile_Plot_000.png")
