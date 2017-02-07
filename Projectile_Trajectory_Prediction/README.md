@@ -29,6 +29,7 @@ Step 3: Testing the Network and Plotting the trajectories
 * The trajectory plots will be generated in the ./plots folder for each of the trajectories given the number of samples in the trajectory is more than 2.
 * Each image will have 3 plots:
     - Actual Trajectory 
-    - Predicted_1 Trajectory : It assumes that the inputs given to the network are actual coordinates.
-    - Predicted_2 Trajectory : It potrays the actual behavior of the model. The inputs given to the network are the coordinates which are previously predicted by the model intself.
+    - Predicted_1 Trajectory : It assumes that the inputs given to the network are actual coordinates. The original coordinates are used to predict the next coordinates.
+    - Predicted_2 Trajectory : It potrays the actual behavior of the model. The inputs given to the network are the coordinates which are previously predicted by the model itself. The accuracy will be lower here, since the error will get accumulated with each subsequent prediction.
+ 
 
