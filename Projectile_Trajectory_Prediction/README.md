@@ -10,6 +10,21 @@ Dependencies:
 
 Description:
 
+Problem Description:
+The input file contains trajectories of 100 projectiles launched at different angles and velocities. The projectiles are of unit mass and are launched from origin (0,0). Their displacement is recorded every 100ms interval. Effect of air friction is ignored and gravity is 9.8 m/s2. The data is in the following format:
+[time_index] , [x] , [y]
+0 , 0.0 , 0.0        # projectile 1
+.
+0 , 0.0 , 0.0        # projectile 2
+.
+0 , 0.0 , 0.0        # projectile 100
+The objective is to use this data to learn how a projectile behaves
+
+Modelling:
+* Recurrent neural networks can be used to process a sequence of input vectors.
+* Use Bidirectional Vanilla RNNs with sequence length 3(atleast).
+* The problem can be simplified into a curve fitting problem, owing to the trajectory being of projectile. One point or even Two points(Makes a line only) would not be enough to extrapolate the next step. However, 3 or more points will be sufficient. The idea is similar to the determination of a unique circle with 3 points(Two line segments).
+
 Step 1: Processing of Raw Data
  *  Run data_preprocessing.py to generate numpy matrices of Input and Outputs of Training, Validation and Testing data.
  *  The dataset is divided into 80:20 ratio for Training to Testing samples
