@@ -24,6 +24,8 @@ Modelling:
 * Recurrent neural networks can be used to process a sequence of input vectors.
 * Use Bidirectional Vanilla RNNs with sequence length 3(atleast).
 * The problem can be simplified into a curve fitting problem, owing to the trajectory being of projectile. One point or even Two points(Makes a line only) would not be enough to extrapolate the next step. However, 3 or more points will be sufficient. The idea is similar to the determination of a unique circle with 3 points(Two line segments).
+* The error function is chosen to be Mean Squared Error.
+* To avoid overfitting, we stop the training once the loss on validation set stops decreasing. Save the model with the best validation loss.
 
 Step 1: Processing of Raw Data
  *  Run data_preprocessing.py to generate numpy matrices of Input and Outputs of Training, Validation and Testing data.
