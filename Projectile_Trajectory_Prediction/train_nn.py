@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 
 #-----------------------------------------Model Parameters----------------------------------------#
 _INPUT_UNITS = 2
-_HIDDEN_UNITS = 40
+_HIDDEN_UNITS = 100
 _OUTPUT_UNITS = 2
 _LEARNING_RATE = 0.01
 _NEPOCH = 1000
