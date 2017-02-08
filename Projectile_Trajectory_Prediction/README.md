@@ -49,4 +49,5 @@ Step 3: Testing the Network and Plotting the trajectories
     - Predicted_1 Trajectory : It assumes that the inputs given to the network are actual coordinates. The original coordinates are used to predict the next coordinates.
     - Predicted_2 Trajectory : It potrays the actual behavior of the model. The inputs given to the network are the coordinates which are previously predicted by the model itself. The accuracy will be lower here, since the error will get accumulated with each subsequent prediction.
  
+ You can also use the pre-trained model from the ./model folder and run predict.py and plots.py to re-generate the results.
 
